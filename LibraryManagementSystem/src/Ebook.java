@@ -10,7 +10,11 @@ public class Ebook extends Book{
         fileSize = 0.0;
     }
     //Constructor Parameterized
-    public Ebook(String fileFormat, double fileSize){
+    public Ebook(String title, String author, String ISBN, String fileFormat, double fileSize){
+        super.title = title;
+        super.author = author;
+        super.ISBN = ISBN;
+        super.availability = true;
         this.fileFormat = fileFormat;
         this.fileSize = fileSize;
     }

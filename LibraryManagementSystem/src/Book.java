@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    private String title;
-    private String author;
-    private String ISBN;
-    private boolean availability;
+    String title;
+    String author;
+    String ISBN;
+    boolean availability;
 
     //Default Constructor
     public Book(){
@@ -15,11 +15,11 @@ public class Book {
         availability = true;
     }
     //Parameterized Constructor
-    public Book(String title, String author, String ISBN, boolean availability) {
+    public Book(String title, String author, String ISBN) {
         this.title = title;
         this.author = author;
         this.ISBN = ISBN;
-        this.availability = availability;
+        availability = true;
     }
 
     //GETTER AND SETTER
@@ -53,5 +53,10 @@ public class Book {
 
     public void setAvailability(boolean availability){
         this.availability = availability;
+    }
+
+    @Override
+    public String toString(){
+        return "Title: " + getTitle() + " Author: " + getAuthor() + " ISBN: "+ getISBN() +" Availability: "+ getAvailability() + "\n";
     }
 }
