@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Arrays {
     public static void main(String[] args){
         System.out.println("Accessing");
@@ -40,5 +42,6 @@ public class Arrays {
             }
             System.out.println();
         }
+
     }
 }
