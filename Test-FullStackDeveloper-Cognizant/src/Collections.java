@@ -29,6 +29,6 @@ public class Collections {
         for (String student : students){
             System.out.println(student);
         }
-        
+
     }
 }
