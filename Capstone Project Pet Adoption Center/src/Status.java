@@ -3,7 +3,6 @@ public enum Status {
     IN_PROGRESS("In Progress"),
     ADOPTED("Adopted");
 
-
     private final String label;
 
     Status(String label){

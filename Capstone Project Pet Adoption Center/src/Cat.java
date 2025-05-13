@@ -1,12 +1,16 @@
-public class Cat extends Pet implements Adoptable, Vaccinable{
+public class Cat extends Pet implements Vaccinable{
+    private boolean isIndoor;
 
-    public Cat(String petID, String name, String species, double age, String breed, Status adoptionStatus) {
-        super.petID = petID;
-        super.name = name;
+    public Cat() {
+        super();
+        this.setSpecies("Cat");
+    }
 
-        super.age = age;
-        super.breed = breed;
-        super.adoptionStatus = adoptionStatus;
+    public Cat(String petID, String name, double age, String breed, Status adoptionStatus) {
+        super(petID, name, "Cat", age, breed, adoptionStatus);
+    }
 
+    public void purr(){
+        System.out.println(getName() + " is purring...");
     }
 }

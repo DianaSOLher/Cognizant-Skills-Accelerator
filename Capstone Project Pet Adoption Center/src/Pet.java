@@ -1,16 +1,16 @@
-abstract public class Pet {
-    protected String petID;
-    protected String name;
-    protected String species;
-    protected double age;
-    protected String breed;
-    protected Status adoptionStatus;
+abstract public class Pet implements Adoptable{
+    private String petID;
+    private String name;
+    private String species;
+    private double age;
+    private String breed;
+    private Status adoptionStatus;
 
     //Constructor Default
     public Pet(){
         petID = "ID-PET";
         name = "NAME-PET";
-        species = "SPECIES-PET";
+        species = null;
         age = 0;
         breed = "BREED-PET";
         adoptionStatus = Status.NOT_ADOPTED;
@@ -80,6 +80,17 @@ abstract public class Pet {
     @Override
     public String toString(){
         return "ID: " + getPetID() + " Name: " + getName() + " Species: " + getSpecies() + " Age: " + getAge() + " Breed: " + getBreed() + " Adoption Status: " + getAdoptionStatus();
+    }
+
+    @Override
+    public void adopt(Adopter adopter) {
+        if (getAdoptionStatus() == Status.ADOPTED){
+            System.out.println("Pet is already adopted");
+        }else {
+            this.setAdoptionStatus(Status.ADOPTED);
+            adopter.getAdoptedPets().put(this.getName(), this);
+            System.out.println(this.getName() +  " has been adopted by " + adopter.getName());
+        }
     }
 }
 
