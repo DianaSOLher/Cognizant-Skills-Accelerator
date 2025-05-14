@@ -79,18 +79,14 @@ abstract public class Pet implements Adoptable{
 
     @Override
     public String toString(){
-        return "ID: " + getPetID() + " Name: " + getName() + " Species: " + getSpecies() + " Age: " + getAge() + " Breed: " + getBreed() + " Adoption Status: " + getAdoptionStatus();
+        return "\n--------------------\nID: " + getPetID() + "\nName: " + getName() + "\nSpecies: " + getSpecies() + "\nAge: " + getAge() + "\nBreed: " + getBreed() + "\nAdoption Status: " + adoptionStatus.getLabel() + "\n--------------------\n";
     }
 
     @Override
-    public void adopt(Adopter adopter) {
-        if (getAdoptionStatus() == Status.ADOPTED){
-            System.out.println("Pet is already adopted");
-        }else {
-            this.setAdoptionStatus(Status.ADOPTED);
-            adopter.getAdoptedPets().put(this.getName(), this);
-            System.out.println(this.getName() +  " has been adopted by " + adopter.getName());
-        }
+    public void adopt(Adopter adopter){
+        adopter.getAdoptedPets().put(this.getName(), this);
+        setAdoptionStatus(Status.ADOPTED);
+        System.out.println(this.getName() +  " has been adopted by " + adopter.getName());
     }
 }
 

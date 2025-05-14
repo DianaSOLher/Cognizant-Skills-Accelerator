@@ -47,6 +47,6 @@ public class Adopter {
 
     @Override
     public String toString(){
-        return "--------------------\nAdopter ID: " + getAdopterID() + "\nName: " + getName() + "\nContactInfo: " + getContactInfo() + "\nAdopted Pets: " + getAdoptedPets() + "--------------------";
+        return "\n--------------------\nAdopter ID: " + getAdopterID() + "\nName: " + getName() + "\nContactInfo: " + getContactInfo() + "\nAdopted Pets: " + getAdoptedPets() + "\n--------------------\n";
     }
 }

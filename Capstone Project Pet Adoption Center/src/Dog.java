@@ -14,4 +14,9 @@ public class Dog extends Pet implements Vaccinable{
     public void bark(){
         System.out.println(getName() + " is barking...");
     }
+
+    @Override
+    public void vaccinate(){
+        System.out.println(getName() + " has been vaccinated.");
+    }
 }
